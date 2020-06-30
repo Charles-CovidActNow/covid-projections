@@ -76,13 +76,11 @@ interface Screenshot {
 
   for (const countyProjections of allCountiesProjections) {
     const fips = countyProjections.primary.fips;
-    if (!BLACKLISTED_COUNTIES.includes(fips)) {
-      addScreenshotsForLocation(
-        screenshots,
-        `/counties/${fips}`,
-        countyProjections,
-      );
-    }
+    addScreenshotsForLocation(
+      screenshots,
+      `/counties/${fips}`,
+      countyProjections,
+    );
   }
 
   // For testing.
